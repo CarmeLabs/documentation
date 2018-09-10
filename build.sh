@@ -6,9 +6,11 @@ cd ./source/packages
 source generate.sh
 cd ../../
 make html
-rm -rf ../docs
-rm -rf ../doctrees
-mv ../html ../docs
+cd ..
+rm -rf ./docs
+rm -rf ./doctrees
+mv ./html ./docs
+cp ./docs-src/CNAME ./docs/CNAME
 git add ./docs/*
 git add ./docs-src/*
 git commit -m "Built documentation"
